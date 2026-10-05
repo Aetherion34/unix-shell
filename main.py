@@ -1,3 +1,4 @@
+from __future__ import annotations
 from contextlib import ExitStack
 import sys
 import os
@@ -57,7 +58,7 @@ class Redirect:
         return stdout,stderr
 
 class Completions: # Contains all method to handle completitions
-    def __init__(self,executor: Executor):
+    def __init__(self, executor: Executor):
         self.executor = executor
         self.executables = {}
         paths = os.environ.get("PATH", "").split(os.pathsep)
